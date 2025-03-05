@@ -28,4 +28,4 @@ dependencies:
     repository: https://cloudnative-pg.github.io/charts
   - name: cluster
     repository: https://cloudnative-pg.github.io/charts
-    condition: cluster.enable
+    condition: cluster.enabled
