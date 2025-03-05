@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/plausible/community-edition
   pullPolicy: IfNotPresent
-  tag: "2.1.5"
+  tag: "v2.1.5"
 
 baseURL: http://localhost:8080
 listenIP: 0.0.0.0
