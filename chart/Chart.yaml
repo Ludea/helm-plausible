@@ -23,9 +23,9 @@ dependencies:
     version: "0.2.0"
     repository: https://helm.altinity.com
     condition: clickhouse.enabled
-  - name: cnpg/cloudnative-pg
+  - name: cloudnative-pg
     version: "0.23.2"
     repository: https://cloudnative-pg.github.io/charts
-  - name: cnpg/cluster
+  - name: cluster
     repository: https://cloudnative-pg.github.io/charts
     condition: postgresql.enable
