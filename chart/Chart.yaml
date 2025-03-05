@@ -19,6 +19,7 @@ dependencies:
   - name: altinity-clickhouse-operator
     version: "0.24.4"
     repository: "https://docs.altinity.com/clickhouse-operator/"
+    condition: Altinity-clickhouse-operator.enabled
   - name: clickhouse
     version: "0.2.0"
     repository: https://helm.altinity.com
@@ -26,6 +27,7 @@ dependencies:
   - name: cloudnative-pg
     version: "0.23.2"
     repository: https://cloudnative-pg.github.io/charts
+    condition: cloudnative-pg.enabled
   - name: cluster
     version: "0.2.1"
     repository: https://cloudnative-pg.github.io/charts
