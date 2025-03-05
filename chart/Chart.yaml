@@ -18,7 +18,7 @@ appVersion: "1.16.0"
 dependencies:
   - name: clickhouse-operator
     version: "0.24.4"
-    repository: "https://docs.altinity.com/clickhouse-operator/"
+    repository: "https://docs.altinity.com/clickhouse-operator/altinity-clickhouse-operator"
   - name: clickhouse
     version: "0.2.0"
     repository: https://helm.altinity.com
