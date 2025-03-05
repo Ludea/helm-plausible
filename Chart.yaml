@@ -1,0 +1,31 @@
+apiVersion: v2
+name: plausible
+description: A Helm Chart for Plausible Analytics - Simple, open-source, lightweight (< 1 KB) and privacy-friendly web analytics alternative to Google Analytics.
+type: application
+icon: https://plausible.io/uploads/plausible-community-edition.png
+sources:
+  - https://github.com/plausible/analytics
+  - https://github.com/ludea/plausible
+keywords:
+  - web analytics
+  - analytics
+  - plausible
+maintainers:
+  - name: Ludea
+    url: https://github.com/Ludea
+version: 0.1.0
+appVersion: "1.16.0"
+dependencies:
+  - name: clickhouse-operator
+    version: "0.24.4"
+    repository: "https://docs.altinity.com/clickhouse-operator/"
+  - name: clickhouse
+    version: "0.2.0"
+    repository: https://helm.altinity.com
+    condition: clickhouse.enabled
+  - name: postgresql-operator
+    version: "0.23.2"
+    repository: https://cloudnative-pg.github.io/charts
+  - name: postgresql
+    repository: https://https://cloudnative-pg.github.io/charts
+    condition: postgresql.enable
