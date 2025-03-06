@@ -87,11 +87,15 @@ spec:
             - name: LISTEN_IP
               value: {{ .Values.listenip | toString | quote }}
             {{- end }}
-
-      {{- with .Values.volumes }}
       volumes:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        {{- if .Values.databaseCA }}
+        - name: database-ca
+          secret:
+            secretName: {{ include "plausible-analytics.secretName" . }}
+            items:
+              - key: DATABASE_CA
+                path: database-ca.pem
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
