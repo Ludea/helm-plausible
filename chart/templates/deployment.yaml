@@ -65,6 +65,24 @@ spec:
             - name: BASE_URL
               value: {{ .Values.baseURL | toString | quote }}
             {{- end }}
+            - name: SECRET_KEY_BASE
+              valueFrom:
+                secretKeyRef:
+                  key: SECRET_KEY_BASE
+                  name: {{ include "plausible-analytics.secretName" . }}
+            - name: TOTP_VAULT_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: TOTP_VAULT_KEY
+                  name: {{ include "plausible-analytics.secretName" . }}
+            {{- if .Values.disableRegistration }}
+            - name: DISABLE_REGISTRATION
+              value: {{ .Values.disableRegistration | toString | quote }}
+            {{- end }}
+            {{- if .Values.logFailedLoginAttempts }}
+            - name: LOG_FAILED_LOGIN_ATTEMPTS
+              value: {{ .Values.logFailedLoginAttempts | toString | quote }}
+            {{- end }}
             {{- if .Values.listenip }}
             - name: LISTEN_IP
               value: {{ .Values.listenip | toString | quote }}
