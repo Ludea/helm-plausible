@@ -7,6 +7,17 @@ image:
 
 baseURL: http://localhost:8080
 listenIP: 0.0.0.0
+secretKeyBase: ""
+totpVaultKey: "dsxvbn3jxDd16az2QpsX5B8O+llxjQ2SJE2i5Bzx38I="  # Should be updated! (TOTP_VAULT_KEY variable must exactly 32 bytes long)
+disableRegistration: false
+logFailedLoginAttempts: false
+clickhouseDatabaseURL: "http://clickhouse:password@plausible-clickhouse:8123/plausible_events_db"
+clickhouseFlushIntervalMS: ""
+clickhouseMaxBufferSize: ""
+
+secret:
+  create: true
+  existingSecret: ""
 
 imagePullSecrets: []
 nameOverride: ""
